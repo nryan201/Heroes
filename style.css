@@ -1,3 +1,32 @@
-body{
-    background-color: blue;
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.hero-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.hero-item h2 {
+    margin-top: 0;
+}
+
+.hero-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.hero-item ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.hero-item ul li {
+    margin-bottom: 5px;
 }
