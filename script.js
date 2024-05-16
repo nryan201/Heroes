@@ -18,7 +18,6 @@ function displayData(data) {
             const heroElement = document.createElement('div');
             heroElement.className = 'hero-item';
 
-            // Display specific properties
             heroElement.innerHTML = `
                 <h2>${hero.name}</h2>
                 ${hero.images.xs ? `<img src="${hero.images.xs}" alt="${hero.name}">` : ''}
@@ -29,7 +28,13 @@ function displayData(data) {
                 <p>Place Of Birth: ${hero.biography.placeOfBirth}</p>
                 <p>Alignment: ${hero.biography.alignment}</p>
             `;
+            heroElement.addEventListener('click', () => {
+                localStorage.setItem('heroId', hero.id);
+                window.location.href = 'information.html'
+            });
+
             container.appendChild(heroElement);
         });
+
     }
 }
