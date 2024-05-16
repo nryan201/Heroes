@@ -12,29 +12,59 @@ fetch('http://localhost:3000/all.json')
 // Function to display data in the HTML
 function displayData(data) {
     const container = document.getElementById('data-container');
+    const table = document.createElement('table');
+    table.className = 'hero-table';
+
+    // Create table header
+    const header = `
+        <tr>
+            <th>Name</th>
+            <th>Photo</th>
+            <th>Full Name</th>
+            <th>Race</th>
+            <th>Gender</th>
+            <th>Powerstats</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Place Of Birth</th>
+            <th>Alignment</th>
+        </tr>
+    `;
+    table.innerHTML = header;
 
     if (Array.isArray(data)) {
         data.forEach(hero => {
-            const heroElement = document.createElement('div');
-            heroElement.className = 'hero-item';
-
-            heroElement.innerHTML = `
-                <h2>${hero.name}</h2>
-                ${hero.images.xs ? `<img src="${hero.images.xs}" alt="${hero.name}">` : ''}
-                <p>Full Name: ${hero.biography.fullName}</p>
-                <p>Race: ${hero.appearance.race}</p>
-                <p>Gender: ${hero.appearance.gender}</p>
-                <p>Height: ${hero.appearance.height}</p>
-                <p>Place Of Birth: ${hero.biography.placeOfBirth}</p>
-                <p>Alignment: ${hero.biography.alignment}</p>
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${hero.name}</td>
+                <td>${hero.images.xs ? `<img src="${hero.images.xs}" alt="${hero.name}" width="50">` : ''}</td>
+                <td>${hero.biography.fullName}</td>
+                <td>${hero.appearance.race}</td>
+                <td>${hero.appearance.gender}</td>
+                <td class="powerstats">
+                    <img src="icons/Intelligence.png" alt="Intelligence" title="Intelligence"> ${hero.powerstats.intelligence}
+                    <img src="icons/Strength.png" alt="Strength" > ${hero.powerstats.strength},
+                    <img src="icons/Speed.png" alt="Speed" > ${hero.powerstats.speed},
+                    <img src="icons/Durability.png" alt="Durability" > ${hero.powerstats.durability},
+                    <img src="icons/Power.png" alt="Power" > ${hero.powerstats.power},
+                    <img src="icons/Combat.png" alt="Combat" > ${hero.powerstats.combat}
+                </td>
+                
+                <td>${hero.appearance.height}</td>
+                <td>${hero.appearance.weight}</td>
+                <td>${hero.biography.placeOfBirth}</td>
+                <td>${hero.biography.alignment}</td>
             `;
-            heroElement.addEventListener('click', () => {
+            row.addEventListener('click', () => {
                 localStorage.setItem('heroId', hero.id);
-                window.location.href = 'information.html'
+                window.location.href = 'information.html';
             });
 
-            container.appendChild(heroElement);
+            table.appendChild(row);
         });
-
     }
+
+    container.appendChild(table);
 }
+
+
