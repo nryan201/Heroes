@@ -3,12 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <title>Title</title>
+    <title>Heroes</title>
 </head>
 <body>
-<table id="data-container"></table>
-
-
+<input type="text" id="input" placeholder="Search for a hero...">
+<label for="pageSize">Page Size:</label>
+<select id="pageSize">
+    <option value="10">10</option>
+    <option value="20" selected>20</option>
+    <option value="50">50</option>
+    <option value="100">100</option>
+    <option value="all">All</option>
+</select>
+<div id="data-container"></div>
+<div id="pagination-controls">
+    <button id="prevPage">Previous</button>
+    <span id="pageInfo"></span>
+    <button id="nextPage">Next</button>
+</div>
 <script src="script.js"></script>
 </body>
 </html>
