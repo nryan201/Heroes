@@ -1,5 +1,5 @@
 // Fetch data from the server
-fetch('http://localhost:3000/all.json')
+fetch('http://localhost:3000/internal/all.json')
     .then((response) => response.json())
     .then((json) => {
         // Call function to display data in the HTML
@@ -19,7 +19,7 @@ function displayData(data) {
             const heroInfo = document.getElementById('hero-info');
             heroInfo.innerHTML = `
                 <h2>${hero.name}</h2>
-                ${hero.images.xs ? `<img src="${hero.images.xs}" alt="${hero.name}">` : ''}
+                ${hero.images.sm ? `<img src="${hero.images.sm}" alt="${hero.name}">` : ''}
                 <p><strong>Full Name:</strong> ${hero.biography.fullName}</p>
                 <p><strong>Alias</strong> ${hero.biography.aliases}</p>
                 <p><strong>Intelligence:</strong> ${hero.powerstats.intelligence}</p>

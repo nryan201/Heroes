@@ -13,7 +13,7 @@ let data = [];
 let currentSortColumn = 'name';
 
 // Fetch data from the server
-fetch('http://localhost:3000/all.json')
+fetch('http://localhost:3000/internal/all.json')
     .then(response => response.json())
     .then(json => {
         data = json;
@@ -85,12 +85,12 @@ function displayData(sortedData = data) {
             <td>${hero.appearance.race}</td>
             <td>${hero.appearance.gender}</td>
             <td class="powerstats">
-                <img src="icons/intelligence.png" alt="Intelligence" title="Intelligence"> ${hero.powerstats.intelligence}
-                <img src="icons/strength.png" alt="Strength" title="Strength"> ${hero.powerstats.strength}
-                <img src="icons/speed.png" alt="Speed" title="Speed"> ${hero.powerstats.speed}
-                <img src="icons/durability.png" alt="Durability" title="Durability"> ${hero.powerstats.durability}
-                <img src="icons/power.png" alt="Power" title="Power"> ${hero.powerstats.power}
-                <img src="icons/combat.png" alt="Combat" title="Combat"> ${hero.powerstats.combat}
+                <img src="doc/img/icons/intelligence.png" alt="Intelligence" title="Intelligence"> ${hero.powerstats.intelligence}
+                <img src="doc/img/icons/strength.png" alt="Strength" title="Strength"> ${hero.powerstats.strength}
+                <img src="doc/img/icons/speed.png" alt="Speed" title="Speed"> ${hero.powerstats.speed}
+                <img src="doc/img/icons/durability.png" alt="Durability" title="Durability"> ${hero.powerstats.durability}
+                <img src="doc/img/icons/power.png" alt="Power" title="Power"> ${hero.powerstats.power}
+                <img src="doc/img/icons/combat.png" alt="Combat" title="Combat"> ${hero.powerstats.combat}
             </td>
             <td>${hero.appearance.height.join(', ')}</td>
             <td>${hero.appearance.weight.join(', ')}</td>
@@ -99,7 +99,7 @@ function displayData(sortedData = data) {
         `;
         row.addEventListener('click', () => {
             localStorage.setItem('heroId', hero.id);
-            window.location.href = 'information.html';
+            window.location.href = 'web/templates/information.html';
         });
 
         table.appendChild(row);

@@ -1,41 +1,55 @@
-
 body {
-    background-color: #541414;
+    background-image: url('../../doc/img/Background-index.jpg');
+    background-size: cover;
+    background-position: center;
     margin: 20px;
+    font-family: Arial, sans-serif;
 }
 
-
+.arrow-white {
+    color: white;
+}
 
 .hero-table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    background-color: #143e9b;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .hero-table th, .hero-table td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 12px;
     text-align: left;
 }
 
-
+.hero-table th {
+    background-color: #357ed1;
+    color: rgb(0, 0, 0);
+}
 
 .hero-table tr:hover {
-    background-color: #555;
+    background-color: #5f1c9e;
 }
 
 .hero-table img {
     display: block;
     margin: 0 auto;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .hero-table .powerstats{
-    padding-top: 35px;
-    padding-bottom: 37px;
+    padding-top: 37px;
+    padding-bottom: 41.2px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
+
 .hero-table .powerstats img {
     width: 20px;
     height: 20px;

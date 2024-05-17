@@ -1,10 +1,11 @@
 
-body {
-    background-color: #333331;
+body {;
     margin: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url('../../doc/img/Background-information.jpg');
+    background-size: cover;
 }
 
 .hero-item {

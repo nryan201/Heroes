@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import { exec } from 'child_process';
 
 const server = createServer((req, res) => {
-    let filePath = req.url === '/' ? 'index.html' : req.url.slice(1); // Si l'URL est '/', chargez 'index.html'
+    let filePath = req.url === '/' ? 'web/templates/index.html' : req.url.slice(1); // Si l'URL est '/', chargez 'index.html'
     fs.readFile(filePath, (err, data) => {
         if (err) {
             res.writeHead(404, {'Content-Type': 'text/plain'});
